@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #0f172a;
+          color: #e5e7eb;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+      
+        .container {
+          background: #1e293b;
+          padding: 30px;
+          border-radius: 12px;
+          width: 350px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+      
+        h1 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      
+        .field-row {
+          display: flex;
+          gap: 10px;
+        }
+      
+        .field {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 15px;
+          width: 100%;
+        }
+      
+        label {
+          margin-bottom: 5px;
+          font-size: 14px;
+          color: #cbd5f5;
+        }
+      
+        input {
+          padding: 10px;
+          border-radius: 6px;
+          border: 1px solid #334155;
+          background: #0f172a;
+          color: #e5e7eb;
+          outline: none;
+          transition: border 0.2s ease;
+        }
+      
+        input:focus {
+          border-color: #6366f1;
+        }
+      
+        input::placeholder {
+          color: #64748b;
+        }
+      
+        .hint {
+          font-size: 12px;
+          color: #94a3b8;
+          margin-top: 5px;
+        }
+      
+        button {
+          width: 100%;
+          padding: 12px;
+          border: none;
+          border-radius: 6px;
+          background: #6366f1;
+          color: white;
+          font-size: 15px;
+          cursor: pointer;
+          transition: background 0.2s ease;
+        }
+      
+        button:hover {
+          background: #4f46e5;
+        }
+      
+        button:active {
+          transform: scale(0.98);
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign-Up</h1>
+        <form class="form" action="/auth/sign-up" method="post">
+            <div class="field-row">
+                <div class="field">
+                  <label for="firstName">First name</label>
+                  <input id="firstName" name="firstName" type="text" autocomplete="given-name" placeholder="John" required />
+                </div>
+                <div class="field">
+                  <label for="lastName">Last name</label>
+                  <input id="lastName" name="lastName" type="text" autocomplete="family-name" placeholder="Doe" required />
+                </div>
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+        
+              <div class="field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="new-password" placeholder="••••••••" required />
+                <span class="hint" id="passwordHint">Must be at least 6 characters</span>
+              </div>
+              <button type="submit" id="submitBtn">
+                <span class="spinner" id="spinner"></span>
+                <span id="btnText">Create account</span>
+              </button>
+        </form>
+    </div>
+</body>
+</html>

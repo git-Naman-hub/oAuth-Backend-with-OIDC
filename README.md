@@ -39,6 +39,16 @@ A fully functional backend implementation of an **OAuth 2.0 Authorization Server
 
 ## 🧠 Architecture Overview
 
+Client App
+↓
+/auth/authorize?clientId= → issues authorization code
+↓
+/auth/tokens → exchanges code for tokens
+↓
+token issued if valid user
+↓
+/auth/userinfo → returns user profile
+
 ---
 
 ## 📦 Tech Stack
